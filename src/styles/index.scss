@@ -1,0 +1,184 @@
+@use 'variables' as *;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $text;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Layout geral */
+.app {
+  min-height: 100%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  background: $white; /* header claro como na imagem */
+  border-bottom: 1px solid $border;
+  padding: 0 16px;
+}
+
+.topbar__menu-btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: $sidebar-bg;
+  color: $sidebar-text-active;
+  font-size: 14px;
+}
+
+.topbar__menu-btn:hover {
+  background: $sidebar-bg-hover;
+}
+
+.content {
+  padding: 24px 16px;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.card {
+  background: $white;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card__text {
+  margin: 0;
+  font-size: 14px;
+  color: $muted;
+}
+
+/* Sidebar fixa (desktop) */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0; /* top right bottom left */
+  z-index: 10;
+  width: 240px;
+  display: none;
+  flex-direction: column;
+  background: $sidebar-bg;
+  border-right: 1px solid $sidebar-border;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 16px;
+  border-bottom: 1px solid $sidebar-border;
+  font-size: 14px;
+  font-weight: 600;
+  color: $sidebar-text-active;
+}
+
+.sidebar__nav {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 8px;
+}
+
+.sidebar__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar__item + .sidebar__item {
+  margin-top: 4px;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: $sidebar-text;
+  text-decoration: none;
+}
+
+.sidebar__link:hover {
+  background: $sidebar-bg-hover;
+  color: $sidebar-text-active;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+}
+
+/* Estado ativo do item */
+.sidebar__link.is-active {
+  background: $sidebar-bg-hover;
+  color: $sidebar-text-active;
+}
+.sidebar__link.is-active .dot {
+  background: $brand;
+}
+
+/* Empurrar conteúdo no desktop */
+@media (min-width: 768px) {
+  .sidebar { display: flex; }
+  .with-sidebar { margin-left: 240px; }
+}
+
+/* Drawer (mobile) */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+}
+
+.drawer__panel {
+  width: 240px;
+  background: $white;
+  border-right: 1px solid $border;
+}
+
+.drawer__panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  border-bottom: 1px solid $border;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.drawer__close {
+  border: 1px solid $border;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: $white;
+}
+
+.drawer__backdrop {
+  flex: 1 1 auto;
+  background: rgba(0,0,0,0.3);
+}
+
+
