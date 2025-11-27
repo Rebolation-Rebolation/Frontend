@@ -45,10 +45,6 @@ function App() {
       {/* Área de conteúdo */}
       <main className="content with-sidebar">
         <div className="container">
-          <div className="card">
-            <h1 className="card__title">Partidas ao Vivo</h1>
-            <p className="card__text">Listagem de partidas de esportes</p>
-          </div>
 
           {/* Slider horizontal de partidas */}
           <MatchCardSlider
