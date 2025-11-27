@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ChampionshipsProvider } from './context/ChampionshipsContext';
+import { Home } from './pages/Home';
+import { Campeonatos } from './pages/Campeonatos';
+import { MeuTime } from './pages/MeuTime';
+import { Configuracoes } from './pages/Configuracoes';
+import { tournamentsToFollow, openChampionships, registeredChampionships, championshipSections } from './data/mockData';
+import type { Tournament } from './types';
+
+const getAllChampionships = (): Tournament[] => {
+  const allChampionships: Tournament[] = [];
+  const seenIds = new Set<string>();
+
+  const addIfNotExists = (championship: Tournament) => {
+    if (!seenIds.has(championship.id)) {
+      seenIds.add(championship.id);
+      allChampionships.push(championship);
+    }
+  };
+
+  tournamentsToFollow.forEach(addIfNotExists);
+  openChampionships.forEach(addIfNotExists);
+  registeredChampionships.forEach(addIfNotExists);
+  championshipSections.forEach((section) => {
+    section.tournaments.forEach(addIfNotExists);
+  });
+
+  return allChampionships;
+};
+
+const initialChampionships = getAllChampionships();
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ChampionshipsProvider initialChampionships={initialChampionships}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/campeonatos" element={<Campeonatos />} />
+          <Route path="/meu-time" element={<MeuTime />} />
+          <Route path="/configuracoes" element={<Configuracoes />} />
+        </Routes>
+      </BrowserRouter>
+    </ChampionshipsProvider>
+  );
 }
 
-export default App
+export default App;
