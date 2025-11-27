@@ -7,13 +7,16 @@ export type Team = {
   score: number
 }
 
-export type MatchCardProps = {
+export type Match = {
   sport: string
   matchNumber: number
   isLive?: boolean
   team1: Team
   team2: Team
   location: string
+}
+
+export type MatchCardProps = Match & {
   className?: string
 }
 
