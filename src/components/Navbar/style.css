@@ -1,0 +1,91 @@
+.navbar {
+    padding-top: 49px;
+    padding-left: 28px;
+    padding-right: 28px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.navbar-close-button {
+    display: none;
+}
+
+.navbar-menu-list {
+    list-style: none;
+}
+
+.navbar-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #AEE1D5;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 17px;
+    transition: all 0.3s ease;
+    margin-bottom: 4px;
+}
+
+.navbar-menu-item svg path {
+    stroke: #AEE1D5;
+    transition: fill 0.3s ease;
+}
+
+.navbar-menu-item-selected {
+    background-color: #05344A;
+    border-radius: 7px;
+    color: #20C4BA;
+    border-left: 3px solid #20C4BA;
+}
+
+.navbar-menu-item-selected svg path {
+    stroke: #20C4BA;
+}
+
+.navbar-menu-item:hover {
+    background-color: #05344A;
+    border-radius: 7px;
+    color: #20C4BA;
+    border-left: 3px solid #20C4BA;
+}
+
+.navbar-menu-item:hover svg path {
+    stroke: #20C4BA;
+}
+
+
+@media (max-width: 1019px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 50%;
+        height: 100%;
+        background-color: #032230;
+        z-index: 2;
+    }
+
+    .navbar-close-button {
+        display: block;
+        cursor: pointer;
+    }
+    .navbar-close-button svg{
+        width: 22px;
+        height: auto;
+        stroke: #20C4BA;
+    }
+
+    .navbar[data-open="true"] {
+        left: 0;
+    }
+}
+

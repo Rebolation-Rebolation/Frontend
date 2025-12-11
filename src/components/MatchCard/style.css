@@ -1,0 +1,126 @@
+.match-card {
+  width: 352px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  cursor: grab;
+  padding: 15px 0;
+}
+
+.match-card:active {
+  cursor: grabbing;
+}
+
+.match-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 10px;
+}
+
+.match-card-header-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  max-width: 200px;
+}
+
+.status-live-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff000f;
+}
+.status-live-text svg {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.status-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: #ff5353;
+}
+
+.match-card-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.match-card-content-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.match-card-content-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.match-card-content-team-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.match-card-content-team-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.match-card-content-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-left: 1px solid #e6e6e6;
+  padding-left: 15px;
+}
+
+.match-card-content-score-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #a6a9b8;
+}
+
+.match-card-content-scores {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.match-card-footer {
+  padding: 10px 15px 0;
+}
+
+.match-card-footer-content {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+}

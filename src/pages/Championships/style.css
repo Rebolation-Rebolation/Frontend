@@ -1,0 +1,13 @@
+.grid-container {
+    margin-top: 24px;
+}
+
+.grid-container-item-description {
+    margin-bottom: 24px;
+    margin-top: 32px;
+}
+
+.grid-container-item-description-text {
+    font-size: 20px;
+    color: #000000;
+}

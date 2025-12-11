@@ -1,0 +1,189 @@
+.forgot-password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  padding: 40px 20px;
+}
+
+.forgot-password-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.forgot-password-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.success-icon svg {
+  color: #032230;
+}
+
+.forgot-password-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.forgot-password-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #A6A9B8;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.forgot-password-subtitle strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.form-group input {
+  padding: 14px 16px;
+  border: 2px solid #F1F2F6;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: #F1F2F6;
+  color: #000000;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #032230;
+  background-color: #ffffff;
+}
+
+.form-group input::placeholder {
+  color: #A6A9B8;
+}
+
+.submit-button {
+  margin-top: 10px;
+  padding: 16px;
+  background-color: #032230;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #043a52;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(3, 34, 48, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.forgot-password-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-to-login-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #032230;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-login-link:hover {
+  opacity: 0.7;
+}
+
+.forgot-password-actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.back-to-login-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #032230;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-login-button:hover {
+  background-color: #043a52;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(3, 34, 48, 0.3);
+}
+
+@media (max-width: 768px) {
+  .forgot-password-card {
+    padding: 30px 20px;
+  }
+
+  .forgot-password-title {
+    font-size: 28px;
+  }
+
+  .forgot-password-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forgot-password-container {
+    padding: 20px 10px;
+  }
+
+  .forgot-password-card {
+    padding: 25px 15px;
+  }
+
+  .forgot-password-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
